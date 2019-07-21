@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rlContent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff">
+
+
+    <timo.topstayscrollview.CustomNestedScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffff">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:descendantFocusability="blocksDescendants"
+            android:orientation="vertical">
+
+            <!--正确答案-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:layout_marginLeft="16dp"
+                    android:gravity="center_vertical"
+                    android:text="正确答案："
+                    android:textColor="#99000000"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@+id/tvRightAnswer"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <!--正确答案-->
+                <TextView
+                    android:id="@+id/tvRightAnswer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:gravity="center_vertical"
+                    android:textColor="#61AE79"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintHorizontal_weight="1"
+                    app:layout_constraintLeft_toRightOf="@+id/tv_1"
+                    app:layout_constraintRight_toRightOf="parent" />
+
+            </LinearLayout>
+
+            <!--答案解析title-->
+            <LinearLayout
+                android:id="@+id/llAnswerAnalysisTitle"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:background="#F4F4F4"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_1">
+
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/icon_shade_vertical_bar" />
+
+
+                <TextView
+                    android:id="@+id/tv_answer_analysis_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="16dp"
+                    android:text="答案解析"
+                    android:textColor="#cc000000"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="
+                    写两个一模一样的固定悬浮栏，
+                    在一开始把外层固定栏先隐藏，
+                    当内层固定栏滑动到外层固定位置时，
+                    把内层固定栏隐藏，外层固定栏显示。
+                    写两个一模一样的固定悬浮栏，
+                    在一开始把外层固定栏先隐藏，
+                    当内层固定栏滑动到外层固定位置时，
+                    把内层固定栏隐藏，外层固定栏显示
+                    "
+                android:textSize="15sp" />
+
+            <!--网友讨论title-->
+            <LinearLayout
+                android:id="@+id/llNetFriendDiscussionTitle"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:background="#F4F4F4"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/icon_shade_vertical_bar" />
+
+                <TextView
+                    android:id="@+id/tvNetFriendDiscussion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="16dp"
+                    android:text="网友讨论"
+                    android:textColor="#cc000000"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/imgDiscussion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="6dp"
+                    android:background="?android:attr/actionBarItemBackground"
+                    android:padding="10dp" />
+
+            </LinearLayout>
+
+            <!--答案解析主题-->
+            <LinearLayout
+                android:id="@+id/llAnswerAnalysis"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </timo.topstayscrollview.CustomNestedScrollView>
+
+
+    <!--吸顶条-->
+    <LinearLayout
+        android:id="@+id/llScrollViewTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!--答案解析title-->
+        <LinearLayout
+            android:id="@+id/llScrollTitle1"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="#f4f4f4"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/icon_shade_vertical_bar" />
+
+
+            <TextView
+                android:id="@+id/tvScrollTitle1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="16dp"
+                android:text="答案解析"
+                android:textColor="#cc000000"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+
+        <!--网友讨论title-->
+        <LinearLayout
+            android:id="@+id/llScrollTitle2"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="#F4F4F4"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/icon_shade_vertical_bar" />
+
+            <TextView
+                android:id="@+id/tvScrollTitle2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:paddingLeft="16dp"
+                android:text="网友讨论"
+                android:textColor="#cc000000"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/imgDiscussion2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="6dp"
+                android:background="?android:attr/actionBarItemBackground"
+                android:padding="10dp" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</RelativeLayout>
+
+
+
